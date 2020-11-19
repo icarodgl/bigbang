@@ -1,0 +1,46 @@
+
+#root {
+    background-color: black;
+
+}
+.flex-container {
+    width: 98vw;
+    height: 98vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.flex-container>#play {
+    width: 200px;
+    height: 200px;
+
+}
+
+.flex-container>#inv {
+    width: 0px;
+    height: 0px;
+
+}
+
+.flex-container>#imagem {
+    width: 98vw;
+    height: 98vh;
+overflow-x: visible;
+overflow-y: visible;
+}
+
+
+.icon {
+    cursor:pointer;
+    background-size: cover;
+}
+.icon-play {
+    transition: background-image 2s;
+    background-image: url(play.svg);
+}
+
+.icon-play:hover,
+.icon-play:focus {
+    background-image: url(playh.svg);
+}

@@ -5,92 +5,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Big Bang!</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="icon" href="icon.png" sizes="64x64" type="image/png">
 
-	<style>
-		#root {
-			background-color: black;
-		}
-
-		.flex-container {
-			width: 98vw;
-			height: 98vh;
-			align-items: center;
-			justify-content: center;
-			display: flex;
-		}
-
-		.flex-container>#play {
-			width: 200px;
-			height: 200px;
-			align: center;
-
-		}
-
-		.flex-container>#inv {
-			width: 0px;
-			height: 0px;
-			align: center;
-
-		}
-
-		.flex-container>#imagem {
-			width: 98vw;
-			height: 98vh;
-		}
-	</style>
+	<!--Import Google Icon Font-->
+	<!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+	<!--Import materialize.css-->
+	<!--<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />-->
 </head>
 
-<body style="background-color: black;">
-	<div class="flex-container" id="root">
-		<img id="play" onclick="play();" src="play.svg" >
+<body id="corpo" style="background-color: black;">
+	<div class="container flex-container" id="root">
+		<span id="play" onclick="play();" class="icon icon-play"></span>
 	</div>
 </body>
-<script>
-	let ids = ["1Pl-RxZXzsh-6kg1sQA8XqdSNeOX7Y5cT"]
-    let baseurl = "https://drive.google.com/uc?export=view&id="
-    const exemplos = ["bb1.jpg","bb2.jpg"];
-
-var elem = document.documentElement;
-
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-}
-
-function play(){
-    openFullscreen()
-    
-    var inv = document.createAttribute("id");
-    var play = document.getElementById("play").id = "inv"
-
-
-    var img = document.createElement("IMG");
-    var id = document.createAttribute("id");
-    id.value = "imagem"
-    img.setAttributeNode(id);
-    document.getElementById('root').appendChild(img);
-    slide()
-}
-function trocaImagem(){
-        let index = Math.floor(Math.random() * exemplos.length)
-        console.log(index)
-        document.getElementById("imagem").src = `${exemplos[index]}`
-}
-function slide() {
-    trocaImagem()
-    setInterval(() => {  
-        trocaImagem()
-    }
-    , 2000)
-    
-
-
-}
-</script>
+<script src="main.js"></script>
+<!--JavaScript at end of body for optimized loading-->
+<!--<script type="text/javascript" src="js/materialize.min.js"></script> -->
 
 </html>
