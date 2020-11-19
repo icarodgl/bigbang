@@ -16,8 +16,10 @@ function openFullscreen() {
 }
 
 function limpaRoot() {
-    let root = document.getElementById('root')
-    root.removeChild(root.childNodes[0])
+    //let root = document.getElementById('root')
+    // root.removeChild(root.childNodes[0])
+    document.getElementById('play').id = "inv"
+
 }
 function adicionaPlay() {
     let root = document.getElementById('root')
